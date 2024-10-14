@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Imran",
+        "email": "imrankhan.am@experionglobal.com",
+        "department": "CS",
+        "role": "user"
+    },
+    {
+        "name": "Sreeram",
+        "email": "sreeram.kamath@experionglobal.com",
+        "department": "CS",
+        "role": "user"
+    },
+    {
+        "name": "Hari",
+        "email": "harikrishnan.kb@experionglobal.com",
+        "department": "F&A",
+        "role": "user"
+    },
+    {
+        "name": "Gopika",
+        "email": "gopika.vinod@experionglobal.com",
+        "department": "F&A",
+        "role": "user"
+    },
+    {
+        "name": "Fardeen",
+        "email": "muhammed.fardeen@experionglobal.com",
+        "department": "HR",
+        "role": "user"
+    },
+    {
+        "name": "Darshan",
+        "email": "dharsan.sajeev@experionglobal.com",
+        "department": "HR",
+        "role": "user"
+    }
+
+]

@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "Gopika Vinod",
+      "email": "gopika.vinod@experionglobal.com",
+      "department": "Finance"
+    },
+    {
+      "id": 2,
+      "name": "Harikrishnan K B",
+      "email": "harikrishnan.kb@experionglobal.com",
+      "department": "HR"
+    },
+    {
+      "id": 3,
+      "name": "Imrankhan AM",
+      "email": "imran@experionglobal.com",
+      "department": "Accounts"
+    },
+    {
+      "id": 4,
+      "name": "Sreeram B Kamath",
+      "email": "sreeram.kamath@experionglobal.com",
+      "department": "HR"
+    },
+    {
+      "id": 5,
+      "name": "Spider Man",
+      "email": "peter.parker@experionglobal.com",
+      "department": "Finance"
+    }
+  ]
+  

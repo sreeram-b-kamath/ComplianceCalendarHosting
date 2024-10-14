@@ -1,0 +1,225 @@
+.calendar {
+    display: inline-block;
+    border-top: 5px white solid;
+    border-radius: 8px;
+    width: max-content;
+    justify-content: end;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-left: 17.68%;
+    margin-top: 55px;
+    background-color: white;
+}
+
+.filter {
+    display: flex;
+    height: 40px;
+    background-color: #BFBFBF;
+}
+
+.filter-items {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.filter select {
+    background-color: #BFBFBF;
+    border: none;
+}
+
+.calendar-header {
+    background-color: #D9D9D9;
+    /* padding: 5px; */
+    border-bottom: 1px solid #ddd;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: white;
+    grid-template-columns: 105px 105px 105px 105px 105px 105px 105px;
+    grid-auto-rows: minmax(70px, 1fr);
+    overflow-y: auto;
+    gap: 0;
+    border-top: 1px solid #ddd;
+    height: fit-content;
+    border-left: 10px solid #D9D9D9;
+    border-right: 10px solid #D9D9D9;
+    border-bottom: 10px solid #D9D9D9;
+}
+
+.calendar-weekdays {
+    display: flex;
+    padding-left: 10px;
+    background-color: #D9D9D9;
+}
+
+.calendar-weekday {
+    font-weight: bold;
+    background-color: #414D58;
+    color: #D9D9D9;
+    font-size: 16px;
+    padding: 0px 0;
+    border-bottom: 1px solid #ddd;
+    width: 105px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.calendar-day.empty {
+    background-color: #f8f9fa;
+    cursor: default;
+}
+
+.calendar-day:hover:not(.empty) {
+    background-color: #e2e6ea;
+}
+
+.calendar-day.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.calendar-day.today {
+    border: 2px solid #ff6347;
+    background-color: #fff7e6;
+    font-weight: bold;
+}
+
+.calendar-day .day-number {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.calendar-day .task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.calendar-day .task-list li {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    margin: 2px 0;
+    padding: 5px;
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-day .task-list li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #dc3545;
+    font-size: 14px;
+}
+
+.monthchangearrows {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #000000;
+    background-color: #b0afaf;
+    cursor: pointer;
+}
+
+.date-heading {
+    width: 200px;
+}
+
+.month-dropdown {
+    background-color: #D9D9D9;
+    border: none;
+    font-size: large;
+    text-align: center;
+    width: 60px;
+    text-transform: none;
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+.year-dropdown {
+    background-color: #D9D9D9;
+    border: none;
+    font-size: large;
+    text-align: center;
+    width: 70px;
+    text-transform: none;
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+.task-count {
+    width: 90%;
+    color: #fff;
+    font-size: 9px;
+    font-weight: bold;
+    display: flex;
+    background-color: #414D58;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    padding: 4px;
+    margin: 0 auto;
+}
+
+.task-count.all-closed {
+    background-color: #28a745;
+}
+
+.warning-symbol {
+    margin-left: 4px;
+    color: red;
+    font-size: 11px;
+}
+
+.exclamation-symbol {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.2em;
+    color: red;
+  }
