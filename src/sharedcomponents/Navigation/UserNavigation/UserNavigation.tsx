@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import styles from "../UserNavigation/UserNavigation.module.css";
 import logo from "../../../../public/Experion_Logo.png";
 import { BsCalendar3 } from "react-icons/bs";
