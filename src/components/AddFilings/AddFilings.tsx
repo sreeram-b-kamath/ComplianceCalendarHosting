@@ -288,7 +288,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         setSnackbarOpen(true);
         handleClose();
         formik.resetForm(); // Reset the form
-      } catch (error) {
+      } catch (error : any) {
         // Log error details
         console.error(
           "Error submitting form data:",
@@ -454,7 +454,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
               label="Due Date"
               value={formik.values.dueDate}
               onChange={(date) => formik.setFieldValue("dueDate", date)}
-              renderInput={(params) => (
+              renderInput={(params : any) => (
                 <TextField
                   {...params}
                   sx={{ margin: 2, width: "35%" }}

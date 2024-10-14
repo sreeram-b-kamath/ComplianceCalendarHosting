@@ -62,7 +62,7 @@ const AdminEditStatus: React.FC<FilingModalProps> = ({
             <Typography sx={{fontFamily: "Montserrat"}}>
               Statute/Act: {content.statuteOrAct || "N/A"}
             </Typography>
-            <Typography sx={{fontFamily: "Montserrat"}}>Assigned To: {content.assignedTo || "N/A"}</Typography>
+            <Typography sx={{fontFamily: "Montserrat"}}>Assigned To: {content.assignedTo.map() || "N/A"}</Typography>
             {console.log(content.assignedTo)}
             <Typography sx={{fontFamily: "Montserrat"}}>Particulars: {content.particulars || "N/A"}</Typography>
             <Typography sx={{ display: "flex", alignItems: "center",fontFamily: "Montserrat"   }}>

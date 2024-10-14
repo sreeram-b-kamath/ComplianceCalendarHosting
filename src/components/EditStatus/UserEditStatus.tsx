@@ -31,7 +31,7 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-const UserEditStatus: React.FC<FilingModalProps> = ({
+const FilingModal: React.FC<FilingModalProps> = ({
   open,
   handleClose,
   content,
@@ -272,4 +272,4 @@ const UserEditStatus: React.FC<FilingModalProps> = ({
   );
 };
 
-export default UserEditStatus;
+export default FilingModal;

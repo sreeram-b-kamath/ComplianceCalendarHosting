@@ -103,7 +103,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
 
       setOpenSnackbar(true);
       handleCloseModal();
-    } catch (error) {
+    } catch (error : any) {
       console.error("Error submitting remarks:", error.message);
     }
   };
@@ -149,7 +149,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
     navigate("/", { state: { date } });
   };
 
-  const handleFilingReassign = (filingId : number, statute : string, form : string, particulars : string, duedate : string, setdepartment : string, setname : Array) => {
+  const handleFilingReassign = (filingId : number, statute : string, form : string, particulars : string, duedate : string, setdepartment : string, setname : string) => {
     navigate("/admin/addfilings", {state: {filingId, statute, form, particulars, duedate, setdepartment, setname}})
   };
 
@@ -181,7 +181,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
-    } catch (error) {
+    } catch (error : any) {
       console.error("Error downloading document:", error.message);
     }
   };
@@ -280,7 +280,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
                           .map((employee) => employee.empName)
                           .join(", ")}
                         <Tooltip title={"Re-Assign"}>
-                            <Button onClick={() => handleFilingReassign(filing.filingId, filing.statuteOrAct, filing.formChallan, filing.particulars, filing.dueDate, filing.depName, filing.assignedToName)}>
+                            <Button onClick={() => handleFilingReassign(filing.filingId, filing.statuteOrAct, filing.formChallan, filing.particulars, filing.dueDate, filing.depName, filing.assignedTo)}>
                               <MdAssignmentInd
                                 style={{
                                   fontSize: 22,
