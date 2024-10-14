@@ -27,7 +27,6 @@ import {
   alpha,
   styled,
 } from "@mui/material";
-import { Delete } from "@mui/icons-material";
 
 import { pink } from "@mui/material/colors";
 

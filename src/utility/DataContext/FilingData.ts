@@ -1,7 +1,7 @@
 import { PaletteOptions } from "@mui/material/styles/createPalette";
 
 
-interface Assignees{
+export interface Assignees{
   empName : string;
 }
 export interface FilingData {

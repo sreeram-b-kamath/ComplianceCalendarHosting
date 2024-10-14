@@ -22,7 +22,7 @@ import { IoMdDownload } from "react-icons/io";
 import { LuClipboardEdit } from "react-icons/lu";
 import { ThemeProvider } from "@mui/material/styles";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { FilingData } from "../../../utility/DataContext/FilingData";
+import { Assignees, FilingData } from "../../../utility/DataContext/FilingData";
 import { getStatusButtonColor } from "../../../utility/statusColors";
 import { theme } from "../../../utility/statusColors";
 import dayjs from "dayjs";
@@ -149,7 +149,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
     navigate("/", { state: { date } });
   };
 
-  const handleFilingReassign = (filingId : number, statute : string, form : string, particulars : string, duedate : string, setdepartment : string, setname : string) => {
+  const handleFilingReassign = (filingId : number, statute : string, form : string, particulars : string, duedate : string, setdepartment : string, setname : Array<Assignees>) => {
     navigate("/admin/addfilings", {state: {filingId, statute, form, particulars, duedate, setdepartment, setname}})
   };
 
