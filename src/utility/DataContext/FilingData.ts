@@ -13,6 +13,7 @@ export interface FilingData {
   particulars: string;
   status: string;
   assignedTo: Assignees[];
+  assignedToId : number;
   email: string;
   docIsUploaded: boolean;
   review: string;

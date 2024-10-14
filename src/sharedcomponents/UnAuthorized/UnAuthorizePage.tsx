@@ -1,5 +1,4 @@
-import React from 'react';
-import { Button, Typography, Container, Box } from '@mui/material';
+import { Typography, Container, Box } from '@mui/material';
 import { FcLock } from 'react-icons/fc';
  
 const UnauthorizedPage = () => {
