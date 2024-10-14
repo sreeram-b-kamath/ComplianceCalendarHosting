@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import mslogo from "../../assets/mslogo.png";
 import logoDark from "../../assets/logo-dark.png";
 import React from "react";
-import App from "../../App";
 import { loginRequest } from "../../auth/auth-config";
 import { UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
 import VectorArt from "../../assets/output-onlinejpgtools.jpg"
