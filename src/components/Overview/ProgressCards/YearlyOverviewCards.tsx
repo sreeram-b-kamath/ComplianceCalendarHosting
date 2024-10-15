@@ -187,31 +187,30 @@ const YearlyOverviewCards: React.FC = () => {
       startY: doc.lastAutoTable.finalY + 10,
       head: [["SL.No", "Department", "Statute/Act", "Task owner", "Status", "Due Date"]],
       body: filingsData
-        .filter(
-          (filing) =>
-            (selectedDepartment === "All Departments" ||
-              filing.depName === selectedDepartment) &&
-            (selectedMonth === null ||
-              new Date(filing.dueDate).getMonth() === selectedMonth)
-        )
-        .map((filing, index) => [
-          index + 1,
-          filing.depName,
-          filing.statuteOrAct,
-          filing.assignedTo,
-          filing.status,
-          new Date(filing.dueDate).toLocaleDateString(),
-        ]),
+          .filter(
+              (filing) =>
+                  (selectedDepartment === "All Departments" || filing.depName === selectedDepartment) &&
+                  (selectedMonth === null || new Date(filing.dueDate).getMonth() === selectedMonth)
+          )
+          .map((filing, index) => [
+              index + 1,
+              filing.depName,
+              filing.statuteOrAct,
+              Array.isArray(filing.assignedTo) ? filing.assignedTo.map(a => a.empName).join(", ") : filing.assignedTo, // Convert Assignees[] to a string
+              filing.status,
+              new Date(filing.dueDate).toLocaleDateString(),
+          ]),
       didParseCell: (data) => {
-        if (data.section === "body" && data.cell.raw === "Pending") {
-          data.cell.styles.textColor = "#C70039"; // Red background for Pending rows
-        } else if (data.section === "body" && data.cell.raw === "Open") {
-          data.cell.styles.textColor = "#0d6efd"; // Blue background for Open rows
-        } else if (data.section === "body" && data.cell.raw === "Closed") {
-          data.cell.styles.textColor = "#198754"; // Green background for Closed rows
-        }
+          if (data.section === "body" && data.cell.raw === "Pending") {
+              data.cell.styles.textColor = "#C70039"; // Red for Pending rows
+          } else if (data.section === "body" && data.cell.raw === "Open") {
+              data.cell.styles.textColor = "#0d6efd"; // Blue for Open rows
+          } else if (data.section === "body" && data.cell.raw === "Closed") {
+              data.cell.styles.textColor = "#198754"; // Green for Closed rows
+          }
       },
-    });
+  });
+  
 
     doc.setFontSize(10);
     doc.text(
