@@ -93,7 +93,8 @@ const AddFilings: React.FC<AddFilingsProps> = ({
 
   const handleUploadOpen = () => setUploadOpen(true);
   const handleUploadClose = () => setUploadOpen(false);
-
+  console.log(selectedUser, selectedDepartmentName, selectedUserName);
+  
   const handleOpen = () => {
     setOpen(true);
   };
