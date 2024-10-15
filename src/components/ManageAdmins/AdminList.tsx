@@ -132,7 +132,7 @@ const AdminList: React.FC = () => {
     setSelectedUser(null);
     setSelectedDepartmentId(null);
   };
-  
+
   const handleCloseDeleteDialog = () => {
     setAdminToDelete(null);
     setDeleteDialogOpen(false);
@@ -159,7 +159,7 @@ const AdminList: React.FC = () => {
     setEnableOpen(false);
   };
 
-  const handleChangeSwitch = (id: number, name: string) => {
+  const handleChangeSwitch = (event: React.ChangeEvent<HTMLInputElement>,id: number, name: string) => {
     setDeleteUsers({ id, name });
     const isEnabled = event.target.checked;
     console.log(isEnabled);
@@ -308,9 +308,10 @@ const AdminList: React.FC = () => {
                             
                             <PinkSwitch
                               checked={admin.isEnabled}
-                              onChange={() =>
+                              onChange={(e) =>
                                 //handleOpen(user.employeeId, user.empName)
                                 handleChangeSwitch(
+                                  e,
                                   admin.employeeId,
                                   admin.empName
                                 )
