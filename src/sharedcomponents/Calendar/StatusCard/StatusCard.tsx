@@ -55,10 +55,10 @@ const StatusCard: React.FC = () => {
   };
 
   const renderCardContent = (obj: FilingData, index: number) => {
-    const isAdminAndWrongDept = 
-      userRole === "Admin" && 
-      userId && 
-      !obj.assignedToId.some(assign => assign.employeeId === userId);
+    // const isAdminAndWrongDept = 
+    //   userRole === "Admin" && 
+    //   userId && 
+    //   !obj.assignedToId.some(assign => assign.employeeId === userId);
 
     return (
       <Card
@@ -167,7 +167,7 @@ const StatusCard: React.FC = () => {
         <div key={index}>
           {renderCardContent(obj, index)}
           {modalContent && modalContent === obj && (
-            userRole === "Admin" && !obj.assignedToId.some(assign => assign.employeeId === userId) ? (
+            userRole === "Admin" && !obj.assignedToId.some(assign => assign === userId) ? (
               <AdminEditStatus
                 open={open}
                 handleClose={handleClose}
