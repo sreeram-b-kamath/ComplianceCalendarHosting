@@ -52,7 +52,7 @@ interface FormValues {
   depName: string;
   assignedToList: User[];
   createdById: string;
-  recurrence: string ;
+  recurrence: string;
 }
 
 // Validation schema
@@ -65,7 +65,7 @@ const validationSchema = Yup.object({
   particulars: Yup.string()
     .required("Particulars are required")
     .max(200, "Particulars cannot be longer than 200 characters"),
-  dueDate: Yup.date().required("Due Date is required").nullable(),
+  dueDate: Yup.date().nullable().required('Due Date is required'),
   depName: Yup.string().required("Department is required"),
   assignedToList: Yup.array()
     .min(1, "At least one assignee is required")
@@ -95,7 +95,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
   const handleUploadOpen = () => setUploadOpen(true);
   const handleUploadClose = () => setUploadOpen(false);
   console.log(selectedUser, selectedDepartmentName, selectedUserName);
-  
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -236,7 +236,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
     if (formData) {
       try {
         if (navigationFlag == false) {
-          
+
           await axios.post(
             "https://localhost:7013/Filings/AddFilings",
             formData
@@ -256,7 +256,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
               formData
             );
             console.log(response);
-            
+
           } else {
             console.error("Employee ID is missing in formData.assignedToList");
           }
@@ -293,7 +293,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         setSnackbarOpen(true);
         handleClose();
         formik.resetForm(); // Reset the form
-      } catch (error : any) {
+      } catch (error: any) {
         // Log error details
         console.error(
           "Error submitting form data:",
@@ -310,13 +310,13 @@ const AddFilings: React.FC<AddFilingsProps> = ({
     reason?: SnackbarCloseReason
   ) => {
     console.log(event);
-    
+
     if (reason === "clickaway") {
       return;
     }
     setSnackbarOpen(false);
   };
-  
+
 
   const handleUploadSuccess = () => {
     setUploadSnackbarOpen(true);
@@ -402,7 +402,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           }}
         >
           <TextField
-            sx={{  width: "35%" }}
+            sx={{ width: "35%" }}
             id="statuteOrAct"
             name="statuteOrAct"
             label="Enter the Statute/Act"
@@ -442,7 +442,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           }}
         >
           <TextField
-            sx={{  width: "35%" }}
+            sx={{ width: "35%" }}
             id="particulars"
             name="particulars"
             label="Particulars"
@@ -460,20 +460,12 @@ const AddFilings: React.FC<AddFilingsProps> = ({
               disablePast
               sx={{ width: "35%" }}
               label="Due Date"
-              value={formik.values.dueDate}
-              onChange={(date) => formik.setFieldValue("dueDate", date)}
-              renderInput={(params : any) => (
-                <TextField
-                  {...params}
-                  sx={{ margin: 2, width: "35%" }}
-                  error={
-                    formik.touched.dueDate && Boolean(formik.errors.dueDate)
-                  }
-                  helperText={formik.touched.dueDate && formik.errors.dueDate}
-                />
-              )}
+              value={formik.values.dueDate} // Ensure this is Dayjs or null
+              onChange={(date) => formik.setFieldValue("dueDate", date)} // This updates the date correctly
             />
+
           </LocalizationProvider>
+
         </Box>
 
         <Box
@@ -538,11 +530,11 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         <Box
           sx={{
             marginTop: 2,
-            marginLeft:15
+            marginLeft: 15
           }}
         >
           <FormControl
-            sx={{marginLeft:3.5,width: "39.5%"}}
+            sx={{ marginLeft: 3.5, width: "39.5%" }}
             error={formik.touched.recurrence && Boolean(formik.errors.recurrence)}
           >
             <InputLabel>Recurrence</InputLabel>
