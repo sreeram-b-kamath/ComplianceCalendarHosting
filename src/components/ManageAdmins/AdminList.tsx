@@ -132,12 +132,7 @@ const AdminList: React.FC = () => {
     setSelectedUser(null);
     setSelectedDepartmentId(null);
   };
-
-  const handleOpenDeleteDialog = (admin: Admin) => {
-    setAdminToDelete(admin);
-    setDeleteDialogOpen(true);
-  };
-
+  
   const handleCloseDeleteDialog = () => {
     setAdminToDelete(null);
     setDeleteDialogOpen(false);

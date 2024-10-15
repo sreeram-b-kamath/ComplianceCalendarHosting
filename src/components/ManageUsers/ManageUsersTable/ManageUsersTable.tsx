@@ -19,7 +19,6 @@ import {
   Typography,
   Modal,
   Switch,
-  Stack,
   Snackbar,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -68,10 +67,10 @@ type EmployeeData = {
   isEnabled: boolean;
 };
 
-type Department = {
-  id: number;
-  depName: string;
-};
+// type Department = {
+//   id: number;
+//   depName: string;
+// };
 
 const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
   fetchData,
@@ -148,10 +147,10 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
     setEnableOpen(false);
   };
 
-  const handleOpen = (id: number, name: string) => {
-    setDeleteUsers({ id, name });
-    setOpen(true);
-  };
+  // const handleOpen = (id: number, name: string) => {
+  //   setDeleteUsers({ id, name });
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);

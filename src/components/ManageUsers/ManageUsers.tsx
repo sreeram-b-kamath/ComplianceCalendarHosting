@@ -13,7 +13,8 @@ const ManageUsers = () => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const response = await axios.get("https://localhost:7013/ManageUsers"); // Update the API URL if necessary
-      // Handle the response here
+      console.log(response);
+      
       setRefresh(!refresh); // Trigger a refresh if needed
     } catch (err) {
       console.error(err);
