@@ -491,7 +491,7 @@ const AdminList: React.FC = () => {
                 <Box
                   sx={{ display: "flex", flexDirection: "row", gap: 3, p: 4 }}
                 >
-                  <Typography variant="body" component="p">
+                  <Typography variant="body1" component="p">
                     Are you sure you want to disable{" "}
                     <span style={{ color: "#c70039" }}>
                       <b>{deleteUsers.name}</b>
@@ -578,7 +578,7 @@ const AdminList: React.FC = () => {
                 <Box
                   sx={{ display: "flex", flexDirection: "row", gap: 3, p: 4 }}
                 >
-                  <Typography variant="body" component="p">
+                  <Typography variant="body1" component="p">
                     Are you sure you want to Enable{" "}
                     <span style={{ color: "#c70039" }}>
                       <b>{deleteUsers.name}</b>
