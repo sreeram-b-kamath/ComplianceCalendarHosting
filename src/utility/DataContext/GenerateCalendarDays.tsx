@@ -1,4 +1,3 @@
-import React from "react";
 import dayjs from "dayjs";
 import { FilingData } from "./FilingData";
 import { FaExclamationCircle } from 'react-icons/fa'; // Import the icon

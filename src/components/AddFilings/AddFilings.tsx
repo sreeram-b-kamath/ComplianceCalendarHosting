@@ -253,6 +253,8 @@ const AddFilings: React.FC<AddFilingsProps> = ({
               `https://localhost:7013/Filings/reassign/${filingId}?employeeId=${employeeId}`,
               formData
             );
+            console.log(response);
+            
           } else {
             console.error("Employee ID is missing in formData.assignedToList");
           }
@@ -284,6 +286,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         });
         // Execute all notification requests
         const notificationResponses = await Promise.all(notificationRequests);
+        console.log(notificationResponses);
         // Show success message and reload page
         setSnackbarOpen(true);
         handleClose();
