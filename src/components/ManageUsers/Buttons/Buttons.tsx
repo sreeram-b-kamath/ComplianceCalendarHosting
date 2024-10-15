@@ -32,13 +32,13 @@ const Buttons: React.FC<{ fetchData: () => void }> = ({ fetchData }) => {
     setOpen(false);
   };
 
-  const handleDepartmentChange = (event): void => {
+  const handleDepartmentChange = (event : any): void => {
     setSelectedDepartment(event.target.value);
     fetchNamePerDepartment(event.target.value);
     setDepartmentError(false);  // Clear error on change
   };
 
-  const handleNameChange = (event): void => {
+  const handleNameChange = (event : any): void => {
     const user = names.find(name => name.empName === event.target.value);
     setSelectedUser(user || null);
     setNameError(false);  // Clear error on change
@@ -76,6 +76,8 @@ const Buttons: React.FC<{ fetchData: () => void }> = ({ fetchData }) => {
       };
       try {
         const response = await axios.post('https://localhost:7013/ManageUsers/AddUserToEmployeeTable', userDto);
+        console.log(response);
+        
         handleClose();
         fetchData();
       } catch (error) {
