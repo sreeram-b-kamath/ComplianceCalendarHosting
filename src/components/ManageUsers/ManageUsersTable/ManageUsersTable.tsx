@@ -135,7 +135,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
       .put(`https://localhost:7013/ManageUsers/${id}?adminId=${profileDetails.EmployeeId}`)
       .then(() => {
         fetchData(); // Refresh data
-        setSnackbarMessage( "User status updated successfully");
+        setSnackbarMessage("User status updated successfully");
         setSnackbarOpen(true);
       })
       .catch((error) => {
@@ -160,7 +160,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
     setSnackbarOpen(false);
   };
 
-  const handleChangeSwitch = (id: number, name: string) => {
+  const handleChangeSwitch = (event: React.ChangeEvent<HTMLInputElement>, id: number, name: string) => {
     setDeleteUsers({ id, name });
     const isEnabled = event.target.checked;
     if (isEnabled) {
@@ -243,11 +243,8 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                         >
                           {user.email}
                         </StyledTableCell>
-                        <StyledTableCell
-                          align="center"
-                          sx={{ fontFamily: "Montserrat" }}
-                        >
-                          {user.departmentName}
+                        <StyledTableCell align="center" sx={{ fontFamily: "Montserrat" }}>
+                          {user.departmentName.map(dep => dep.department).join(", ")} {/* Extracting department names */}
                         </StyledTableCell>
                         <StyledTableCell
                           align="center"
@@ -282,8 +279,9 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                           >
                             <PinkSwitch
                               checked={user.isEnabled}
-                              onChange={() =>
+                              onChange={(e) =>
                                 handleChangeSwitch(
+                                  e,
                                   user.employeeId,
                                   user.empName
                                 )
@@ -352,7 +350,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                 <Box
                   sx={{ display: "flex", flexDirection: "row", gap: 3, p: 4 }}
                 >
-                  <Typography variant="body1" component="p" sx={{fontFamily: "Montserrat"}}>
+                  <Typography variant="body1" component="p" sx={{ fontFamily: "Montserrat" }}>
                     Are you sure you want to disable{" "}
                     <span style={{ color: "#c70039" }}>
                       <b>{deleteUsers.name}</b>
@@ -373,7 +371,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                     variant="outlined"
                     color="error"
                     onClick={handleClose}
-                    //Not disable or enable
+                  //Not disable or enable
                   >
                     <Typography sx={{ fontFamily: "Montserrat" }}>
                       No
@@ -441,7 +439,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                 <Box
                   sx={{ display: "flex", flexDirection: "row", gap: 3, p: 4 }}
                 >
-                  <Typography variant="body1" component="p" sx={{fontFamily: "Montserrat"}}>
+                  <Typography variant="body1" component="p" sx={{ fontFamily: "Montserrat" }}>
                     Are you sure you want to Enable{" "}
                     <span style={{ color: "#c70039" }}>
                       <b>{deleteUsers.name}</b>
