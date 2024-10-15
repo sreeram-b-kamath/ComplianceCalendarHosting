@@ -186,8 +186,19 @@ const FilingModal: React.FC<FilingModalProps> = ({
             <Typography sx={{ fontFamily: "Montserrat" }}>
               Statute/Act: {content.statuteOrAct || "N/A"}
             </Typography>
-            <Typography sx={{ fontFamily: "Montserrat" }}>
-              Assigned To: {content.assignedTo || "N/A"}
+            <Typography sx={{fontFamily: "Montserrat"}}>
+              Assigned To: 
+              {/* Render array of assignees */}
+              {Array.isArray(content.assignedTo) ? (
+                content.assignedTo.map((assignee, index) => (
+                  <span key={index}>
+                    {assignee.empName || "N/A"} {/* Adjust based on the structure of Assignees */}
+                    {index < content.assignedTo.length - 1 ? ", " : ""}
+                  </span>
+                ))
+              ) : (
+                "N/A"
+              )}
             </Typography>
             <Typography sx={{ fontFamily: "Montserrat" }}>
               Particulars: {content.particulars || "N/A"}
