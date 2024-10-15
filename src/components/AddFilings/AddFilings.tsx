@@ -13,6 +13,7 @@ import {
   Select,
   Snackbar,
   SnackbarCloseReason,
+  SelectChangeEvent
 } from "@mui/material";
 import GetAppRoundedIcon from "@mui/icons-material/GetAppRounded";
 import PublishRoundedIcon from "@mui/icons-material/PublishRounded";
@@ -210,7 +211,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
   });
 
   const handleDepartmentChange = (
-    event: React.ChangeEvent<{ value: unknown }>
+    event: SelectChangeEvent<string>
   ) => {
     const selectedDepName = event.target.value as string;
     const department = departments.find(
@@ -305,14 +306,17 @@ const AddFilings: React.FC<AddFilingsProps> = ({
   };
 
   const handleSnackbarClose = (
-    _event?: React.SyntheticEvent,
+    event: React.SyntheticEvent<Element, Event> | Event,
     reason?: SnackbarCloseReason
   ) => {
+    console.log(event);
+    
     if (reason === "clickaway") {
       return;
     }
     setSnackbarOpen(false);
   };
+  
 
   const handleUploadSuccess = () => {
     setUploadSnackbarOpen(true);
@@ -524,10 +528,6 @@ const AddFilings: React.FC<AddFilingsProps> = ({
                   error={
                     formik.touched.assignedToList &&
                     Boolean(formik.errors.assignedToList)
-                  }
-                  helperText={
-                    formik.touched.assignedToList &&
-                    formik.errors.assignedToList
                   }
                 />
               )}
