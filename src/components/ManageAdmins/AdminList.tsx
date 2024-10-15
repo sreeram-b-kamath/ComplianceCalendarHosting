@@ -209,7 +209,14 @@ const AdminList: React.FC = () => {
             "https://localhost:7013/api/Admin/AddAdmin",
             userDto
           );
-          const newAdmin = { ...userDto, employeeId: response.data.employeeId };
+          const newAdmin: Admin = {
+            employeeId: response.data.employeeId,
+            empName: selectedUser.empName,
+            email: selectedUser.email,
+            departmentName: department.depName,
+            isEnabled: true, // Set this based on your logic
+            // Include any other properties required by the Admin interface
+          };
           setAdmins([...admins, newAdmin]);
           handleCloseModal();
         } catch (error) {
