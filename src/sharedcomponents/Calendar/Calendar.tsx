@@ -276,7 +276,7 @@ const Calendar: React.FC = () => {
           })}
         </div>
       </div>
-      <DataContext.Provider value={selectedObject}>
+      <DataContext.Provider value ={selectedObject}>
         <TaskWindow selectedDate={selectedDate} currentDate={currentDate} />
       </DataContext.Provider>
     </>

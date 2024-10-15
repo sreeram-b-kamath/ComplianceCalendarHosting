@@ -80,14 +80,12 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const [users, setUsers] = useState<EmployeeData[]>([]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [departments, setDepartments] = useState<Department[]>([]);
   const [open, setOpen] = useState<boolean>(false);
   const [enableOpen, setEnableOpen] = useState<boolean>(false);
   const [deleteUsers, setDeleteUsers] = useState<{ id: number; name: string }>({
     id: 0,
     name: "",
   });
-  const [isEnabled, setIsEnabled] = useState(true);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Loading state
   const navigate = useNavigate();
   const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
