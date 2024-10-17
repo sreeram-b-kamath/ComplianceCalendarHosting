@@ -23,9 +23,27 @@ const profileDetails: ProfileDetails = {
 
 export const GetRoles = async (authToken: string | undefined) => {
   try {
-    const response = await axios.get(
-      `https://localhost:7013/getUserRole/${authToken}`
-    );
+
+    // const response = await axios.get(
+    //   `http://172.16.4.89:90/api/Admin/getUserRole`, {
+    //     params: {
+    //       token: authToken, 
+    //     },
+    //   }
+    // )
+
+    // const response = await axios.get(
+    //   `http://172.16.4.89:90/getUserRole`, {
+    //     params: {
+    //       token: authToken, 
+    //     },
+    //   }
+    // )
+
+    // const response = await axios.get(`http://172.16.4.89:90/getUserRole/${authToken}`);
+    const response = await axios.get(`http://localhost:7013/getUserRole/${authToken}`);
+
+    
     const roles = response.data;
     profileDetails.EmployeeName = roles.EmployeeName;
     profileDetails.Department = roles.department;

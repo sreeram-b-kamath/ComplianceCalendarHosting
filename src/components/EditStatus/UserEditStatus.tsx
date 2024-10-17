@@ -90,7 +90,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
           formData.append("uploadedDate", new Date().toISOString());
 
           await axios.post(
-            `https://localhost:7013/Document/AddDocument`,
+            `http://172.16.4.89:90/Document/AddDocument`,
             formData,
             {
               headers: {
@@ -103,7 +103,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
         }
 
         await axios.put(
-          `https://localhost:7013/Filings/UpdateFilingStatus/${content.filingId}`,
+          `http://172.16.4.89:90/Filings/UpdateFilingStatus/${content.filingId}`,
           {
             status,
             docIsUploaded,
@@ -119,7 +119,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
         if (status === "Closed") {
 
           await axios.post(
-            `https://localhost:7013/api/Notification/ClosedFiling?${queryString}`,
+            `http://172.16.4.89:90/api/Notification/ClosedFiling?${queryString}`,
           );
         }
 

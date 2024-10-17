@@ -129,7 +129,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
     const fetchDepartments = async () => {
       try {
         const response = await axios.get(
-          `https://localhost:7013/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`
+          `http://172.16.4.89:90/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`
         );
         setDepartments(response.data);
       } catch (error) {
@@ -142,7 +142,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
   const fetchUsersInDepartment = async (selectedDepartmentName: string) => {
     try {
       const response = await axios.get(
-        `https://localhost:7013/api/Admin/GetEmployeesByDepartmentName/${selectedDepartmentName}`
+        `http://172.16.4.89:90/api/Admin/GetEmployeesByDepartmentName/${selectedDepartmentName}`
       );
       setEmployee(response.data);
     } catch (error) {
@@ -238,7 +238,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         if (navigationFlag == false) {
 
           await axios.post(
-            "https://localhost:7013/Filings/AddFilings",
+            "http://172.16.4.89:90/Filings/AddFilings",
             formData
           );
 
@@ -252,7 +252,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           const employeeId = formData.assignedToList[0]?.employeeId; // Ensure employeeId is available
           if (employeeId) {
             const response = await axios.post(
-              `https://localhost:7013/Filings/reassign/${filingId}?employeeId=${employeeId}`,
+              `http://172.16.4.89:90/Filings/reassign/${filingId}?employeeId=${employeeId}`,
               formData
             );
             console.log(response);
@@ -277,7 +277,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           }).toString();
 
           return axios
-            .post(`https://localhost:7013/api/Notification?${queryString}`)
+            .post(`http://172.16.4.89:90/api/Notification?${queryString}`)
             .catch((error) => {
               console.error(
                 "Error sending notification for user ID:",

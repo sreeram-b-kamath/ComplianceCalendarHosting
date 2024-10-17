@@ -78,7 +78,7 @@ const AdminList: React.FC = () => {
 
   const fetchAdmins = async () => {
     try {
-      const response = await axios.get("https://localhost:7013/api/Admin");
+      const response = await axios.get("http://172.16.4.89:90/api/Admin");
       console.log(response.data);
       setAdmins(response.data);
       setIsLoading(false);
@@ -96,7 +96,7 @@ const AdminList: React.FC = () => {
     const fetchDepartments = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:7013/api/departments"
+          "http://172.16.4.89:90/api/departments"
         );
         setDepartments(response.data);
       } catch (error) {
@@ -109,7 +109,7 @@ const AdminList: React.FC = () => {
   const fetchUsersInDepartment = async (id: number) => {
     try {
       const response = await axios.get(
-        `https://localhost:7013/api/Admin/GetEmployeesByDepartmentId/${id}`
+        `http://172.16.4.89:90/api/Admin/GetEmployeesByDepartmentId/${id}`
       );
       setUsersInDepartment(response.data);
     } catch (error) {
@@ -142,7 +142,7 @@ const AdminList: React.FC = () => {
     console.log("Employee ID : " + id);
     // Write update api to update the
     axios
-      .put(`https://localhost:7013/api/Admin/${id}`)
+      .put(`http://172.16.4.89:90/api/Admin/${id}`)
       .then(() => {
         console.log("User status updated successfully");
         fetchAdmins(); // Refresh data
@@ -178,7 +178,7 @@ const AdminList: React.FC = () => {
     if (adminToDelete) {
       try {
         await axios.delete(
-          `https://localhost:7013/api/Admin/${adminToDelete.employeeId}`
+          `http://172.16.4.89:90/api/Admin/${adminToDelete.employeeId}`
         );
         const updatedAdmins = admins.filter(
           (admin) => admin.employeeId !== adminToDelete.employeeId
@@ -206,7 +206,7 @@ const AdminList: React.FC = () => {
 
         try {
           const response = await axios.post(
-            "https://localhost:7013/api/Admin/AddAdmin",
+            "http://172.16.4.89:90/api/Admin/AddAdmin",
             userDto
           );
           const newAdmin: Admin = {

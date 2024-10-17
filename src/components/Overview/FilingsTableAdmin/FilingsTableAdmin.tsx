@@ -87,7 +87,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
 
     try {
       const response = await fetch(
-        `https://localhost:7013/Filings/review/${selectedFilingId}`,
+        `http://172.16.4.89:90/Filings/review/${selectedFilingId}`,
         {
           method: "POST",
           headers: {
@@ -159,7 +159,7 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
   const handleDownload = async (filingId: number) => {
     try {
       const response = await fetch(
-        `https://localhost:7013/Document/download/${filingId}`,
+        `http://172.16.4.89:90/Document/download/${filingId}`,
         {
           method: "GET",
           headers: {

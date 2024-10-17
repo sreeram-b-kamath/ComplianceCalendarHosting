@@ -44,7 +44,7 @@ const UploadComponent: React.FC<UploadComponentProps> = ({ onClose, onUploadSucc
     formData.append("createdById", profileDetails.EmployeeId.toString());
 
     try {
-      const response = await fetch("https://localhost:7013/Filings/UploadFilings/upload", {
+      const response = await fetch("http://172.16.4.89:90/Filings/UploadFilings/upload", {
         method: "POST",
         body: formData,
       });

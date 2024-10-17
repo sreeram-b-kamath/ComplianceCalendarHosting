@@ -33,7 +33,7 @@ const UserNavigation = () => {
   const fetchNotifications = async () => {
     try {
       const { EmployeeId } = profileDetails;
-      const response = await fetch(`https://localhost:7013/api/Notification/unread/${EmployeeId}`);
+      const response = await fetch(`http://172.16.4.89:90/api/Notification/unread/${EmployeeId}`);
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
@@ -93,7 +93,7 @@ const UserNavigation = () => {
 
   const markAsRead = async (notificationId: number) => {
     try {
-      const response = await fetch(`https://localhost:7013/api/Notification/markasread/${notificationId}`, {
+      const response = await fetch(`http://172.16.4.89:90/api/Notification/markasread/${notificationId}`, {
         method: "POST",
       });
       if (!response.ok) {

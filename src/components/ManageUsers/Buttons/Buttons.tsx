@@ -47,7 +47,7 @@ const Buttons: React.FC<{ fetchData: () => void }> = ({ fetchData }) => {
   const fetchDepartment = async () => {
     const { EmployeeId } = profileDetails;
     console.log(EmployeeId);
-    const response = await axios.get(`https://localhost:7013/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`);
+    const response = await axios.get(`http://172.16.4.89:90/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`);
     setDepartments(response.data);
   };
 
@@ -56,7 +56,7 @@ const Buttons: React.FC<{ fetchData: () => void }> = ({ fetchData }) => {
   }, []);
 
   const fetchNamePerDepartment = async (department: string) => {
-    const response = await axios.get(`https://localhost:7013/ManageUsers/GetUsersByDepartment/${department}`);
+    const response = await axios.get(`http://172.16.4.89:90/ManageUsers/GetUsersByDepartment/${department}`);
     setNames(response.data);
   };
 
@@ -75,7 +75,7 @@ const Buttons: React.FC<{ fetchData: () => void }> = ({ fetchData }) => {
         DepartmentName: selectedDepartment,
       };
       try {
-        const response = await axios.post('https://localhost:7013/ManageUsers/AddUserToEmployeeTable', userDto);
+        const response = await axios.post('http://172.16.4.89:90/ManageUsers/AddUserToEmployeeTable', userDto);
         console.log(response);
         
         handleClose();
