@@ -40,8 +40,8 @@ export const GetRoles = async (authToken: string | undefined) => {
     //   }
     // )
 
-    // const response = await axios.get(`http://172.16.4.89:90/getUserRole/${authToken}`);
-    const response = await axios.get(`http://localhost:7013/getUserRole/${authToken}`);
+    const response = await axios.get(`http://172.16.4.89:90/getUserRole/${authToken}`);
+    // const response = await axios.get(`http://localhost:7013/getUserRole/${authToken}`);
 
     
     const roles = response.data;
