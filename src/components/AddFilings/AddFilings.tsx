@@ -129,7 +129,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
     const fetchDepartments = async () => {
       try {
         const response = await axios.get(
-          `http://172.16.4.89:90/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`
+          `https://compliancecalendarbackendhosting.onrender.com/api/Admin/GetDepartmentNamesByEmployeeId/${EmployeeId}`
         );
         setDepartments(response.data);
       } catch (error) {
@@ -142,7 +142,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
   const fetchUsersInDepartment = async (selectedDepartmentName: string) => {
     try {
       const response = await axios.get(
-        `http://172.16.4.89:90/api/Admin/GetEmployeesByDepartmentName/${selectedDepartmentName}`
+        `https://compliancecalendarbackendhosting.onrender.com/api/Admin/GetEmployeesByDepartmentName/${selectedDepartmentName}`
       );
       setEmployee(response.data);
     } catch (error) {
@@ -238,7 +238,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
         if (navigationFlag == false) {
 
           await axios.post(
-            "http://172.16.4.89:90/Filings/AddFilings",
+            "https://compliancecalendarbackendhosting.onrender.com/Filings/AddFilings",
             formData
           );
 
@@ -252,7 +252,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           const employeeId = formData.assignedToList[0]?.employeeId; // Ensure employeeId is available
           if (employeeId) {
             const response = await axios.post(
-              `http://172.16.4.89:90/Filings/reassign/${filingId}?employeeId=${employeeId}`,
+              `https://compliancecalendarbackendhosting.onrender.com/Filings/reassign/${filingId}?employeeId=${employeeId}`,
               formData
             );
             console.log(response);
@@ -277,7 +277,7 @@ const AddFilings: React.FC<AddFilingsProps> = ({
           }).toString();
 
           return axios
-            .post(`http://172.16.4.89:90/api/Notification?${queryString}`)
+            .post(`https://compliancecalendarbackendhosting.onrender.com/api/Notification?${queryString}`)
             .catch((error) => {
               console.error(
                 "Error sending notification for user ID:",

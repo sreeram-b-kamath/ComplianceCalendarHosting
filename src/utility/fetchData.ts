@@ -13,9 +13,9 @@ export const useFetchData = async (): Promise<FilingData[]> => {
 
         let response;
         if (RoleName === "Admin") {
-            response = await axios.get<FilingData[]>(`http://172.16.4.89:90/Filings/GetAdminFilings/${EmployeeId}`);
+            response = await axios.get<FilingData[]>(`https://compliancecalendarbackendhosting.onrender.com/Filings/GetAdminFilings/${EmployeeId}`);
         } else {
-            response = await axios.get<FilingData[]>(`http://172.16.4.89:90/Filings/GetUserFilings/${EmployeeId}`);
+            response = await axios.get<FilingData[]>(`https://compliancecalendarbackendhosting.onrender.com/Filings/GetUserFilings/${EmployeeId}`);
         }
 
         return response.data;

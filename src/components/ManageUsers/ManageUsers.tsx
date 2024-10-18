@@ -12,7 +12,7 @@ const ManageUsers = () => {
   const fetchData = async () => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const response = await axios.get("http://172.16.4.89:90/ManageUsers"); // Update the API URL if necessary
+      const response = await axios.get("https://compliancecalendarbackendhosting.onrender.com/ManageUsers"); // Update the API URL if necessary
       console.log(response);
       
       setRefresh(!refresh); // Trigger a refresh if needed

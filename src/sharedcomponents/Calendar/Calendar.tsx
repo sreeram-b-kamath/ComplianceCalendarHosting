@@ -62,11 +62,11 @@ const Calendar: React.FC = () => {
       let response;
       if (RoleName === "Admin") {
         response = await fetch(
-          `http://172.16.4.89:90/Filings/GetAdminFilings/${EmployeeId}?year=${apiYear}`
+          `https://compliancecalendarbackendhosting.onrender.com/Filings/GetAdminFilings/${EmployeeId}?year=${apiYear}`
         );
       } else {
         response = await fetch(
-          `http://172.16.4.89:90/Filings/GetUserFilings/${EmployeeId}?year=${apiYear}`
+          `https://compliancecalendarbackendhosting.onrender.com/Filings/GetUserFilings/${EmployeeId}?year=${apiYear}`
         );
       }
   
