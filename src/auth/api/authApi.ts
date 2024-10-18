@@ -41,6 +41,7 @@ export const GetRoles = async (authToken: string | undefined) => {
     // )
 
     const response = await axios.get(`https://compliancecalendarbackendhosting.onrender.com/getUserRole/${authToken}`);
+
     // const response = await axios.get(`http://localhost:7013/getUserRole/${authToken}`);
 
     
