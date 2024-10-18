@@ -55,9 +55,9 @@ const YearlyOverviewCards: React.FC = () => {
 
         let response;
         if (RoleName === "Admin") {
-          response = await fetch(`http://172.16.4.89:90/Filings/GetAdminFilings/${EmployeeId}?year=${selectedYear}`);
+          response = await fetch(`https://compliancecalendarbackendhosting.onrender.com/Filings/GetAdminFilings/${EmployeeId}?year=${selectedYear}`);
         } else {
-          response = await fetch(`http://172.16.4.89:90/Filings/GetUserFilings/${EmployeeId}?year=${selectedYear}`);
+          response = await fetch(`https://compliancecalendarbackendhosting.onrender.com/Filings/GetUserFilings/${EmployeeId}?year=${selectedYear}`);
         }
 
         if (!response.ok) {

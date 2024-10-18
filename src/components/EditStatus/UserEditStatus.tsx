@@ -90,7 +90,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
           formData.append("uploadedDate", new Date().toISOString());
 
           await axios.post(
-            `http://172.16.4.89:90/Document/AddDocument`,
+            `https://compliancecalendarbackendhosting.onrender.com/Document/AddDocument`,
             formData,
             {
               headers: {
@@ -103,7 +103,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
         }
 
         await axios.put(
-          `http://172.16.4.89:90/Filings/UpdateFilingStatus/${content.filingId}`,
+          `https://compliancecalendarbackendhosting.onrender.com/Filings/UpdateFilingStatus/${content.filingId}`,
           {
             status,
             docIsUploaded,
@@ -119,7 +119,7 @@ const FilingModal: React.FC<FilingModalProps> = ({
         if (status === "Closed") {
 
           await axios.post(
-            `http://172.16.4.89:90/api/Notification/ClosedFiling?${queryString}`,
+            `https://compliancecalendarbackendhosting.onrender.com/api/Notification/ClosedFiling?${queryString}`,
           );
         }
 

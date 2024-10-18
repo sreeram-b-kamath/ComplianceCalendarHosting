@@ -110,7 +110,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
     setIsLoading(true); // Set loading to true when fetching starts
     try {
       const response = await axios.get(
-        `http://172.16.4.89:90/ManageUsers/${profileDetails.EmployeeId}`
+        `https://compliancecalendarbackendhosting.onrender.com/ManageUsers/${profileDetails.EmployeeId}`
       ); // Adjust API endpoint
 
       setUsers(response.data);
@@ -132,7 +132,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
   const handleDeleteUser = (id: number) => {
     // Write update api to update the
     axios
-      .put(`http://172.16.4.89:90/ManageUsers/${id}?adminId=${profileDetails.EmployeeId}`)
+      .put(`https://compliancecalendarbackendhosting.onrender.com/ManageUsers/${id}?adminId=${profileDetails.EmployeeId}`)
       .then(() => {
         fetchData(); // Refresh data
         setSnackbarMessage("User status updated successfully");
