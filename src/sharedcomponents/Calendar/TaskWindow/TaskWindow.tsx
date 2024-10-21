@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import StatusCard from "../StatusCard/StatusCard";
 import DataContext from "../../../utility/DataContext/DataContext";
 import { FilingData } from "../../../utility/DataContext/FilingData"; 
+import Nofiling_image from "../../../../public/nofilingsimage.png"
 
 interface RightSidebarProps {
   selectedDate: dayjs.Dayjs | null;
@@ -87,7 +88,8 @@ const TaskWindow: React.FC<RightSidebarProps> = ({
             >
               <Box
                 component="img"
-                src="public\nofilingsimage.png"
+                // src="public\nofilingsimage.png"
+                src={Nofiling_image}
                 sx={{ height: "100px" }}
               ></Box>
               <Box sx={{fontWeight:'500'}}>No Filings for Today</Box>
