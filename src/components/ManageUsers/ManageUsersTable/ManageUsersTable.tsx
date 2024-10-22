@@ -125,9 +125,9 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
     fetchUsers(); // Fetch data when component mounts
   }, [fetchData]);
 
-  const handleAssignTask = (name: string, department: string) => {
-    navigate("/admin/addfilings", { state: { name, department } }); // Pass data to addFilings page
-  };
+  // const handleAssignTask = (name: string, department: string) => {
+  //   navigate("/admin/addfilings", { state: { name, department } }); // Pass data to addFilings page
+  // };
 
   const handleDeleteUser = (id: number) => {
     // Write update api to update the
