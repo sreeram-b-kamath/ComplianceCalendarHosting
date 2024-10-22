@@ -246,7 +246,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                         <StyledTableCell align="center" sx={{ fontFamily: "Montserrat" }}>
                           {user.departmentName.map(dep => dep.department).join(", ")} {/* Extracting department names */}
                         </StyledTableCell>
-                        <StyledTableCell
+                        {/* <StyledTableCell
                           align="center"
                           sx={{ fontFamily: "Montserrat" }}
                         >
@@ -269,7 +269,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                               />
                             </IconButton>
                           </Tooltip>
-                        </StyledTableCell>
+                        </StyledTableCell> */}
                         <StyledTableCell
                           align="center"
                           sx={{ fontFamily: "Montserrat" }}
