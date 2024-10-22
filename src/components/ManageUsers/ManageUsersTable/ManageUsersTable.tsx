@@ -252,7 +252,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                         >
                           <Tooltip title="Assign">
                             <IconButton
-                              disabled={!user.isEnabled}
+                              disabled
                               onClick={() =>
                                 handleAssignTask(
                                   user.empName,
