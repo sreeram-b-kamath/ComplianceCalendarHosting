@@ -55,15 +55,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-type Departments = {
-  department: string;
-}[];
-
 type EmployeeData = {
   employeeId: number;
   empName: string;
   email: string;
-  departmentName: Departments;
+  departmentName: string;
   isEnabled: boolean;
 };
 
@@ -244,7 +240,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
                           {user.email}
                         </StyledTableCell>
                         <StyledTableCell align="center" sx={{ fontFamily: "Montserrat" }}>
-                          {user.departmentName.map(dep => dep.department).join(", ")} {/* Extracting department names */}
+                          {user.departmentName} {/* Extracting department names */}
                         </StyledTableCell>
                         {/* <StyledTableCell
                           align="center"
