@@ -7,21 +7,21 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
-import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+// import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Box,
   Button,
   CircularProgress,
-  IconButton,
+  // IconButton,
   Tooltip,
   Typography,
   Modal,
   Switch,
   Snackbar,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { pink } from "@mui/material/colors";
 import profileDetails from "../../../auth/api/authApi";
 
@@ -86,7 +86,7 @@ const ManageUsersTable: React.FC<{ fetchData: () => void }> = ({
     name: "",
   });
   const [isLoading, setIsLoading] = useState<boolean>(true); // Loading state
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
   const [snackbarMessage, setSnackbarMessage] = useState<string>("");
 
