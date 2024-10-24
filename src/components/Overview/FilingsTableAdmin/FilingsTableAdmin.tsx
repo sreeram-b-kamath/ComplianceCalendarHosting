@@ -275,11 +275,17 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
                       {filing.statuteOrAct}
                     </TableCell>
                     <TableCell sx={{ textAlign: "center" }}>
-                      <span style={{ display: "flex", alignItems: "center" }}>
+                      <span style={{
+                        display: "flex",
+                        alignItems: "center"
+                      }}>
                         {filing.assignedTo
                           .map((employee) => employee.empName)
                           .join(", ")}
-                        <Tooltip title={"Re-Assign"}>
+                        <span style={{
+                          display: role === "Admin" ? "flex" : "none",
+                        }}>
+                          <Tooltip title={"Re-Assign"}>
                             <Button onClick={() => handleFilingReassign(filing.filingId, filing.statuteOrAct, filing.formChallan, filing.particulars, filing.dueDate, filing.depName, filing.assignedTo)}>
                               <MdAssignmentInd
                                 style={{
@@ -288,7 +294,8 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
                                 }}
                               />
                             </Button>
-                        </Tooltip>
+                          </Tooltip>
+                        </span>
                       </span>
                     </TableCell>
                     <TableCell sx={{ textAlign: "center" }}>
@@ -359,8 +366,8 @@ const FilingsTableAdmin: React.FC<FilingsTableAdminProps> = ({
                             p: 2,
                             color:
                               filing.status === "Open" ||
-                              filing.status === "Pending" ||
-                              !filing.docIsUploaded
+                                filing.status === "Pending" ||
+                                !filing.docIsUploaded
                                 ? "gray"
                                 : "black",
                           }}
